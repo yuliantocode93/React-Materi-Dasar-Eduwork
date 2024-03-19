@@ -1,10 +1,11 @@
 import React from "react";
-import Component from "./Components";
+// import Component from "./Components";
+import Styling from "./Styling";
 
 function App() {
   return (
     <div className="App">
-      <Component />
+      <Styling />
     </div>
   );
 }

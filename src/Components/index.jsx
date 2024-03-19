@@ -6,10 +6,8 @@ class Component extends React.Component {
   render() {
     return (
       <div>
-        {/* <ClassComponent name="Class Component" /> */}
-        <ClassComponent name={23} />
+        <ClassComponent name="Class Component" />
         <FunctionalComponent name={"Functional Component"} />
-        {/* <FunctionalComponent /> */}
       </div>
     );
   }

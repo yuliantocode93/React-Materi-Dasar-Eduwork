@@ -14,10 +14,6 @@ const FunctionalComponent = ({ name }) => {
   return (
     <div>
       <h1>Hello Functional Component : {name}</h1>
-      {/* <button onClick={() => setValue(value + 1)}>+</button>
-      <span> {value} </span>
-      <button onClick={() => setValue(value - 1)}>-</button> */}
-
       <button onClick={handleMinus}>-</button>
       <span> {value} </span>
       <button onClick={handlePlus}>+</button>
