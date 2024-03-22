@@ -1,12 +1,10 @@
 import React from "react";
-// import Component from "./Components";
-// import Styling from "./Styling";
-import Rendering from "./Rendering";
+import Form from "./Form";
 
 function App() {
   return (
     <div className="App">
-      <Rendering />
+      <Form />
     </div>
   );
 }
