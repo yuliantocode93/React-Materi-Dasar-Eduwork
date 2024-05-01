@@ -22,7 +22,7 @@ class Styled extends React.Component {
     return (
       <div>
         <Title />
-        <h2 className="title">Belajan React</h2>
+        <h2 className="title">Belajar React</h2>
         <Button>Go Eduwork</Button>
       </div>
     );
