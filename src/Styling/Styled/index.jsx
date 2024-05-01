@@ -17,7 +17,6 @@ const Button = styled.button`
     border-color: rgb(22, 70, 204);
   }
 `;
-
 class Styled extends React.Component {
   render() {
     return (

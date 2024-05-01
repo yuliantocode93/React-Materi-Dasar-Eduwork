@@ -13,7 +13,7 @@ const FunctionalComponent = ({ name }) => {
   };
   return (
     <div>
-      <h1>Hello Functional Component : {name}</h1>
+      <h1>Functional Component : {name}</h1>
       <button onClick={handleMinus}>-</button>
       <span> {value} </span>
       <button onClick={handlePlus}>+</button>
@@ -22,7 +22,7 @@ const FunctionalComponent = ({ name }) => {
 };
 
 FunctionalComponent.defaultProps = {
-  name: "Functional Component",
+  name: "Name of Functional Component",
 };
 
 export default FunctionalComponent;
