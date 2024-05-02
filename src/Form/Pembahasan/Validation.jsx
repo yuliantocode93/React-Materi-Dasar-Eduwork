@@ -37,15 +37,27 @@ class Validation extends React.Component {
     let message = [];
 
     if (email.length === 0) {
-      message.push("Email harus diisi");
+      message = [...message, "email harus diisi"];
     }
+
     if (password.length === 0) {
-      message.push("Password harus diisi");
+      message = [...message, "password harus diisi"];
     }
+
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!re.test(String(email).toLowerCase())) {
+      message = [...message, "email tidak valid"];
+    }
+
+    if (password.length < 8) {
+      message = [...message, "password minimal 8 karakter"];
+    }
+
     if (message.length > 0) {
-      alert(message.join("\n"));
+      this.setState({ errors: message });
     } else {
-      alert("Login Berhasil");
+      alert(`email : ${email}, password : ${password}`);
+      this.setState({ errors: [] });
     }
   };
   render() {
