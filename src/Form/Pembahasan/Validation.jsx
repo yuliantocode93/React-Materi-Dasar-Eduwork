@@ -13,6 +13,18 @@ const Input = ({ label, type, name, onChange }) => {
   );
 };
 
+const showErrors = (errors) => {
+  return (
+    <div>
+      <ul style={{ color: "red", marginLeft: "-10px" }}>
+        {errors.map((error, i) => (
+          <li key={i}>{error}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 class Validation extends React.Component {
   state = {
     email: "",
@@ -21,21 +33,20 @@ class Validation extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     const { email, password } = this.state;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("Email tidak valid");
-      return;
+    let message = [];
+
+    if (email.length === 0) {
+      message.push("Email harus diisi");
     }
-    if (password.length < 8) {
-      alert("Password harus lebih dari 8 karakter");
-      return;
+    if (password.length === 0) {
+      message.push("Password harus diisi");
     }
-    alert(`Email: ${email}, Password: ${password}`);
-    this.setState({ email: "", password: "" }, () => {
-      console.log(this.state.errors);
-    });
+    if (message.length > 0) {
+      alert(message.join("\n"));
+    } else {
+      alert("Login Berhasil");
+    }
   };
   render() {
     const style = {
@@ -46,6 +57,7 @@ class Validation extends React.Component {
     };
     return (
       <div style={style}>
+        {this.state.errors && showErrors(this.state.errors)}
         <h4>Login Page</h4>
         <form onSubmit={this.handleSubmit}>
           <Input label="Email" type="text" name="email" onChange={(Value) => this.setState({ email: Value })} />
