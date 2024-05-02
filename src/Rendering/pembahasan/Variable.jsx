@@ -6,6 +6,7 @@ class Variable extends React.Component {
     b: true,
     c: "",
     d: 0,
+    e: "",
   };
   render() {
     return (

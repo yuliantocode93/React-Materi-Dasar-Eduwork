@@ -12,7 +12,7 @@ class FormElement extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault(); // Prevents the default form submission behavior
     alert(`
-      nama : ${this.state.name}, 
+      nama : ${this.state.name},
       jurusan : ${this.state.jurusan}, 
       gender : ${this.state.gender}, 
       alamat : ${this.state.alamat}, 

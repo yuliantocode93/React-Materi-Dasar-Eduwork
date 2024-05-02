@@ -4,11 +4,12 @@ import Component from "./Components";
 import Styling from "./Styling";
 import Bootstrap from "./Styling/Bootstrap";
 import Reusable from "./reusable-component";
+import Rendering from "./Rendering";
 
 function App() {
   return (
     <div className="App">
-      <Reusable />
+      <Form />
     </div>
   );
 }
