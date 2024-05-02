@@ -21,13 +21,20 @@ class Validation extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    alert(`
-      email: ${this.state.email},
-      password: ${this.state.password}
-    `);
-    this.setState({
-      email: "",
-      password: "",
+
+    const { email, password } = this.state;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Email tidak valid");
+      return;
+    }
+    if (password.length < 8) {
+      alert("Password harus lebih dari 8 karakter");
+      return;
+    }
+    alert(`Email: ${email}, Password: ${password}`);
+    this.setState({ email: "", password: "" }, () => {
+      console.log(this.state.errors);
     });
   };
   render() {
