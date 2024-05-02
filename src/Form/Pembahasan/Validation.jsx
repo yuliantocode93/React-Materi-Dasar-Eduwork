@@ -15,18 +15,18 @@ const Input = ({ label, type, name, onChange }) => {
 
 class Validation extends React.Component {
   state = {
-    username: "",
+    email: "",
     password: "",
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
     alert(`
-      username: ${this.state.username},
+      email: ${this.state.email},
       password: ${this.state.password}
     `);
     this.setState({
-      username: "",
+      email: "",
       password: "",
     });
   };
@@ -41,7 +41,7 @@ class Validation extends React.Component {
       <div style={style}>
         <h4>Login Page</h4>
         <form onSubmit={this.handleSubmit}>
-          <Input label="Username" type="text" name="username" onChange={(Value) => this.setState({ username: Value })} />
+          <Input label="Email" type="text" name="email" onChange={(Value) => this.setState({ email: Value })} />
           <Input label="Password" type="password" name="password" onChange={(Value) => this.setState({ password: Value })} />
           <br />
           <button type="submit">Login</button>
