@@ -9,7 +9,7 @@ import Rendering from "./Rendering";
 function App() {
   return (
     <div className="App">
-      <Form />
+      <Rendering />
     </div>
   );
 }
